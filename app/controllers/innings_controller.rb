@@ -1,6 +1,6 @@
 class InningsController < ApplicationController
   def index
-    @innings = Inning.all
+    @innings = @innings ||= Inning.all
     @repeats = inning_repeats.to_json
     @on_leave = inning_leave.to_json
     @dismissed = inning_dismissed.to_json
