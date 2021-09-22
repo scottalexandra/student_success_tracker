@@ -6,6 +6,18 @@ desc 'Import Outcomes Data'
 task import_outcomes_data: :environment do
   parent_directory = Rails.root.join('db', 'data', 'outcomes_data')
   file_names = [
+    '2011_student_outcomes_B1.csv',
+    '2011_student_outcomes_B2.csv',
+    '2011_student_outcomes_B3.csv',
+    '2011_student_outcomes_F1.csv',
+    '2011_student_outcomes_F2.csv',
+    '2011_student_outcomes_F3.csv',
+    '2102_student_outcomes_B1.csv',
+    '2102_student_outcomes_B2.csv',
+    '2102_student_outcomes_B3.csv',
+    '2102_student_outcomes_F1.csv',
+    '2102_student_outcomes_F2.csv',
+    '2102_student_outcomes_F3.csv',
     '2107_student_outcomes_B1.csv',
     '2107_student_outcomes_B2.csv',
     '2107_student_outcomes_B3.csv',
