@@ -1,5 +1,7 @@
 <h1>Student Success Tracker</h1>
 
+
+<div id="container" style="width:100%; height:400px;" data-dismissed=<%= @dismissed %> data-repeat=<%= @repeats %> data-onleave=<%= @on_leave %>></div>
 <% @innings.each do |inning| %>
   <section class=<%= "inning_#{inning.title}" %>>
     <p>Inning: <%= inning.title %> </p>
@@ -8,3 +10,54 @@
     <p>Repeated: <%= inning.repeated %> </p>
   </section>
 <% end %>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+    let container = document.getElementById('container')
+        const chart = Highcharts.chart('container', {
+            chart: {
+                type: 'line'
+            },
+            title: {
+                text: 'Student Outcomes'
+            },
+            yAxis: {
+                title: {
+                    text: 'Number of Students'
+                }
+            },
+            xAxis: {
+              categories: ['2011', '2102', '2103', '2105', '2107']
+            },
+            legend: {
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'middle'
+            },
+            series: [{
+                name: 'On Leave',
+                data: JSON.parse(container.dataset.onleave)
+              }, {
+                name: 'Repeat',
+                data: JSON.parse(container.dataset.repeat)
+              }, {
+                name: 'Dismissed',
+                data: JSON.parse(container.dataset.dismissed)
+            }],
+            responsive: {
+              rules: [{
+                condition: {
+                  maxWidth: 500
+                },
+                chartOptions: {
+                  legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                  }
+                }
+              }]
+            }
+        });
+    });
+</script>

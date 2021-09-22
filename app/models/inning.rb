@@ -3,14 +3,14 @@ class Inning < ApplicationRecord
   has_many :students, through: :student_innings
 
   def currently_on_leave
-    student_innings.where("outcome = ?", "Left for Leave/Audit During Mod").first
+    student_innings.where("outcome = ?", "Left for Leave/Audit During Mod").count
   end
 
   def repeated
-    student_innings.where("outcome = ?", "Repeat").first
+    student_innings.where("outcome = ?", "Repeat").count
   end
 
   def dismissed
-    student_innings.where("outcome = ?", "Dismissed").first
+    student_innings.where("outcome = ?", "Dismissed").count
   end
 end
