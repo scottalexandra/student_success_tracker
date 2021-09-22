@@ -1,0 +1,10 @@
+<h1>Student Success Tracker</h1>
+
+<% @innings.each do |inning| %>
+  <section class=<%= "inning_#{inning.title}" %>>
+    <p>Inning: <%= inning.title %> </p>
+    <p>Currently On Leave: <%= inning.currently_on_leave %> </p>
+    <p>Dismissed: <%= inning.dismissed %> </p>
+    <p>Repeated: <%= inning.repeated %> </p>
+  </section>
+<% end %>
