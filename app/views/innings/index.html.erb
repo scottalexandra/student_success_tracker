@@ -1,9 +1,7 @@
-<h1>Student Success Tracker</h1>
 
-
-<div id="container" style="width:100%; height:400px;" data-dismissed=<%= @dismissed %> data-repeat=<%= @repeats %> data-onleave=<%= @on_leave %>></div>
+<div id="container" style="width:50%; height:400px;" data-dismissed=<%= @dismissed %> data-repeat=<%= @repeats %> data-onleave=<%= @on_leave %>></div>
 <% @innings.each do |inning| %>
-  <section class=<%= "inning_#{inning.title}" %>>
+  <section class="outcomes">
     <p>Inning: <%= inning.title %> </p>
     <p>Currently On Leave: <%= inning.currently_on_leave %> </p>
     <p>Dismissed: <%= inning.dismissed %> </p>
