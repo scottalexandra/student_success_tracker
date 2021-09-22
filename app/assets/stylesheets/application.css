@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+ .outcomes {
+   width: 50rem;
+   text-align: center;
+   margin: auto;
+   border-bottom: 1px solid;
+   padding: 10px;
+ }
+
+ #container {
+   margin: auto;
+   padding-bottom: 20px;
+ }
